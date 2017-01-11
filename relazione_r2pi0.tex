@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+
+\usepackage[italian]{babel} 
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{cleveref}
+\usepackage{wrapfig}
+
+\graphicspath{ {images/} }
+
+\pagestyle{headings}
+\title{R2Pi0}
+\author{
+  Tosatto Davide
+  \and
+  Riccardo Grespan
+}
+
+\newcommand{\cbegin}{‘‘}
+\newcommand{\cend}{’’}
+\newcommand{\imgsz}{0.3\textwidth}
+
+\makeindex
+
+\begin{document} 
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Obiettivi del progetto}
+L'obiettivo del progetto è di creare una riproduzione in scala di R2-D2, noto personaggio robotico della serie di Star Wars.
+
+\begin{figure}[h]
+\includegraphics[width=\imgsz]{R2D2}
+\centering
+\caption{R2D2}
+\label{fig:R2D2}
+\end{figure}
+
+La ricostruzione comprende:
+\begin{enumerate}
+\item movimento sul piano attraverso ruote (come nel film)
+\item riproduzione di suoni simili a quelli originali attraverso un buzzer, per dare quel tocco di retro che non guasta mai
+\item luci led e finto proiettore, comunque emulato da un led
+\item rilevamento degli ostacoli e corrispondente arrabbiatura del robot se lo mandiamo a tutta velocità verso uno di essi
+\item funzione follow che gli fa mantenere una certa distanza dall'oggetto (o dalla persona) che lo precede
+\item un rudimentale controllo vocale
+\item esoscheletro in carta che riproduce le fattezze del robot
+\end{enumerate}
+
+Questa prima versione non avrà la possibilità di ruotare la testa e cambiare inclinazione, questo per mancanza di tempo e di componenti (ulteriori motori, ulteriori driver, contatti girevoli per le luci che stanno sulla testa)
+ 
+\section{Componenti e scelte progettuali}
+\subsection{Scheda di controllo}
+Iniziamo dal cuore del progetto: \emph{la scheda di controllo}.
+
+Le opzioni erano sostanzialmente due: Raspberry Pi0 o Arduino Uno.
+
+\begin{figure}[h]
+\includegraphics[width=\imgsz]{rpi0}
+\centering
+\caption{Raspberry Pi0}
+\label{fig:rpi0}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\imgsz]{Uno}
+\centering
+\caption{Arduino Uno}
+\label{fig:uno}
+\end{figure}
+
+Per la maggior parte dei compiti le due schede erano sostanzialmente intercambiabili, in particolare:
+\begin{enumerate}
+\item \emph{GPIO - General Purpose Input Output}: entrambi i dispositivi hanno tutte le interfacce che ci servono, ossia qualche I/O digitale e uscite PWM. Entrambi non possono dare in uscita elevate correnti, ma questo non importa perché il controllo di ogni componente è sempre mediato da transistor esterni;
+\item \emph{Alimentazione}: entrambi i dispositivi possono essere alimentati da usb, rendendo quindi possibile l'uso di una normale batteria esterna da telefono per l'alimentazione;
+\item \emph{Potenza di calcolo}: entrambi i dispositivi in esame hanno la potenza di calcolo necessaria per svolgere ognuno dei compiti necessari agli scopi del progetto.
+\end{enumerate} 
+
+Le seguenti motivazioni ci hanno fatto propendere per Raspberry Pi0:
+\begin{enumerate}
+\item \emph{Semplicità di sviluppo}: grazie al fatto di avere a disposizione un sistema operativo completo, possiamo utilizzare linguaggi di più alto livello rispetto al C fornito da Arduino. Questo ci permette di creare codice meglio organizzato e più facilmente espandibile in futuro. La nostra scelta per il linguaggio è ricaduta su \emph{Python}, in quanto semplice, conciso ed efficace;
+\item \emph{Memoria a disposizione}: grazie alla memoria disponibile, sensibilmente superiore a quella di Arduino, ci è permesso di integrare più suoni. Inoltre, in futuro, sarà sempre possibile migliorare la qualità degli stessi.
+\item \emph{Facilità di connessione}: Raspberry Pi0 risulta più facile da connettere al mondo in quanto basta collegare un adattatore wifi o bluetooth all'USB. Arduino invece richiede appositi shield, costosi e non utilizzabili su altre schede, almeno non senza opportune modifiche
+\item \emph{Prezzo}: Raspberry Pi0 costa 5\$, molto meno di un Arduino, e, nonostante questo, offre infinite possibilità in più in quanto propone un sistema completo di tutto.
+\end{enumerate}
+
+Certo Raspberry Pi0 ha dalla sua un grande svantaggio: il consumo.
+
+Arduino a vuoto consuma circa 50mA, mentre Raspberry Pi0 arriva a 65mA in idle, ma si alza parecchio se il carico di lavoro aumenta, questo perchè il processore di Raspberry Pi0 è molto più performante di quello di Arduino, inoltre, montando un sistema operativo completo, Raspberry Pi0 ha anche diverso overhead in campo di potenza computazionale e consumo, cosa non trascurabile.
+
+Chiaramente poi i dispositivi di comunicazione comportano un innalzamento dei consumi, ma questo su entrambe le schede.
+
+In conclusione, i vantaggi nell'utilizzo di Raspberry Pi0 ci sono sembrati schiaccianti.
+
+\subsection{Comunicazione}
+Anche qui, due opzioni iniziali: Bluetooth o WiFi.
+
+Abbiamo optato per una connessione Bluetooth per i seguenti motivi:
+\begin{enumerate}
+\item \emph{Consumo}: il Bluetooth risulta avere un consumo energetico inferiore rispetto al WiFi, portandoci ad avere una durata della batteria leggermente superiore (non abbiamo dati precisi)
+\item \emph{Semplicità d'uso}: il Bluetooth è pensato per connessioni punto a punto, ossia esattamente la funzione che serve a noi. Il Wifi, invece, non è pensato per quello scopo e quindi relegherebbe all'utilizzo nei soli spazi dotati di rete WiFi oppure alla configurazione di una rete ad-hoc che risulta comunque un'operazione non banale e spesso mal funzionante (soprattutto su Linux)
+\end{enumerate}
+
+\end{document}
