@@ -20,7 +20,6 @@
 \newlabel{fig:uno}{{3}{4}}
 \newlabel{fig:uno@cref}{{[figure][3][]3}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Comunicazione}{6}}
-<<<<<<< HEAD
 \@writefile{toc}{\contentsline {section}{\numberline {3}Schemi circuitali}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Controllo motori}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Schema del circuito di controllo dei circuiti}}{7}}
@@ -29,5 +28,3 @@
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Funzione logica implementata nel circuito}}{8}}
 \newlabel{tab:tabFunz}{{1}{8}}
 \newlabel{tab:tabFunz@cref}{{[table][1][]1}{8}}
-=======
->>>>>>> ea59905c2d054f492c12f40a792471af90ef7c3c
