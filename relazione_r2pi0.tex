@@ -110,7 +110,7 @@ Per il controllo dei motori abbiamo deciso di utilizzare una versione leggerment
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{SchemaH}
 \centering
-\caption{Schema del circuito di controllo dei circuiti}
+\caption{Schema del circuito di controllo dei motori}
 \label{fig:ponteH}
 \end{figure}
 
@@ -124,12 +124,11 @@ Passiamo alla rapida spiegazione del funzionamento del circuito. Il circuito ha 
 Passiamo alla disamina dei componenti e delle loro funzioni.
 Tutti i transistori sono BJT. Questa scelta è stata fatta perché i BJT permettono di fare passare correnti elevate e soprattutto hanno basse cadute di potenziale in saturazione, ossia circa 0.3V tra collettore ed emettitore. Mantenere cadute di potenziale basse è essenziale perché il tutto è alimentato a soli 5V.
 
-I quattro transistor principali di potenza sono Q1, Q2, Q3 e Q4. La circuiteria è fatta in modo tale che né Q1 e Q3, né Q2 e Q4 conducano \emph{mai} insieme. Questo avvenimento infatti produrrebbe un cortocircuito che danneggerebbe il circuito.
+I quattro transistor principali di potenza sono Q1, Q2, Q3 e Q4. La circuiteria è fatta in modo tale che né Q1 e Q3, né Q2 e Q4 conducano \emph{mai} insieme. Questo avvenimento infatti produrrebbe un cortocircuito che danneggerebbe l'hardware.
 
 Da misurazioni, si è visto che i motori consumano meno di 200mA l'uno, e si è dunque pensato di inserire per sicurezza un fusibile da 500mA, F1, sufficientemente permissivo da far funzionare il motore, ma abbastanza restrittivo per evitare di bruciare l'alimentatore in caso di corto, che comunque, salvo manomissioni, non dovrebbe avvenire.
 
-Abbiamo poi altri quattro transistor che servono ad assicurare l'assenza di corti e ad implementare la funzionalità di cortocircuitare la bobina con entrambi gli ingressi a 1.
-
+Abbiamo poi altri quattro transistor che servono ad assicurare l'assenza di corti e ad implementare la funzionalità di cortocircuitare la bobina con entrambi gli ingressi a 1.\\
 La funzione logica realizzata è quella mostrata in tabella \ref{tab:tabFunz}
 
 \begin{table}[h]
@@ -153,5 +152,6 @@ on & on & on & on & off & off
 \label{tab:tabFunz}
 \end{table}
 
+Da notare che U\$2 e U\$4 hanno un partitore resistivo sulla base. Questo serve a ritardare la loro accensione, infatti gli input non sono realmente squadrati ma aumentano gradualmente con una certa pendenza, seppur elevata. Questo permette di ritardare l'attivazione dei transistor sopracitati. Infatti se sulla base servono 0.7V per permettere l'accensione, con il partitore è richiesto che IN2 sia già ad almeno 1.4V. Questo accorgimento serve quando attiviamo contemporaneamente IN1 e IN2, per dare il tempo a U\$3 e U\$1 di inibire l'accensione di Q3 e Q4 impedendo quindi cortocircuiti.
 
 \end{document}
