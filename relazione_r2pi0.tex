@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{cleveref}
 \usepackage{wrapfig}
+\usepackage{hyperref}
 
 \graphicspath{ {images/} }
 
@@ -40,16 +41,17 @@ L'obiettivo del progetto è di creare una riproduzione in scala di R2-D2, noto p
 
 La ricostruzione comprende:
 \begin{enumerate}
-\item movimento sul piano attraverso ruote (come nel film)
-\item riproduzione di suoni simili a quelli originali attraverso un buzzer, per dare quel tocco di retro che non guasta mai
-\item luci led e finto proiettore, comunque emulato da un led
-\item rilevamento degli ostacoli e corrispondente arrabbiatura del robot se lo mandiamo a tutta velocità verso uno di essi
-\item funzione follow che gli fa mantenere una certa distanza dall'oggetto (o dalla persona) che lo precede
-\item un rudimentale controllo vocale
-\item esoscheletro in carta che riproduce le fattezze del robot
+\item movimento sul piano attraverso ruote;
+\item riproduzione di suoni simili a quelli originali attraverso un buzzer, per dare quel tocco di retro che non guasta mai;
+\item luci led e finto proiettore, comunque emulato da un led;
+\item rilevamento degli ostacoli e corrispondente arrabbiatura del robot se viene mandato a tutta velocità verso uno di essi;
+\item funzione follow che permette di mantenere una certa distanza dall'oggetto (o dalla persona) che lo precede
+\item controllo vocale per funzioni base;
+\item esoscheletro in cartone e plastica che riproduce le fattezze del robot;
+\item un abbozzo di emozioni per dare un minimo di personalità al robot.
 \end{enumerate}
 
-Questa prima versione non avrà la possibilità di ruotare la testa e cambiare inclinazione, questo per mancanza di tempo e di componenti (ulteriori motori, ulteriori driver, contatti girevoli per le luci che stanno sulla testa)
+Questa prima versione non avrà la possibilità di ruotare la testa e cambiare inclinazione, questo per mancanza di tempo e di componenti (ulteriori motori, ulteriori driver, contatti girevoli per le luci posizionate sulla testa)
  
 \section{Componenti e scelte progettuali}
 \subsection{Scheda di controllo}
@@ -74,7 +76,7 @@ Le opzioni erano sostanzialmente due: Raspberry Pi0 o Arduino Uno.
 Per la maggior parte dei compiti le due schede erano sostanzialmente intercambiabili, in particolare:
 \begin{enumerate}
 \item \emph{GPIO - General Purpose Input Output}: entrambi i dispositivi hanno tutte le interfacce che ci servono, ossia qualche I/O digitale e uscite PWM. Entrambi non possono dare in uscita elevate correnti, ma questo non importa perché il controllo di ogni componente è sempre mediato da transistor esterni;
-\item \emph{Alimentazione}: entrambi i dispositivi possono essere alimentati da usb, rendendo quindi possibile l'uso di una normale batteria esterna da telefono per l'alimentazione;
+\item \emph{Alimentazione}: entrambi i dispositivi possono essere alimentati da usb, rendendo quindi possibile l'utilizzo di una batteria esterna per cellulare;
 \item \emph{Potenza di calcolo}: entrambi i dispositivi in esame hanno la potenza di calcolo necessaria per svolgere ognuno dei compiti necessari agli scopi del progetto.
 \end{enumerate} 
 
@@ -82,30 +84,30 @@ Le seguenti motivazioni ci hanno fatto propendere per Raspberry Pi0:
 \begin{enumerate}
 \item \emph{Semplicità di sviluppo}: grazie al fatto di avere a disposizione un sistema operativo completo, possiamo utilizzare linguaggi di più alto livello rispetto al C fornito da Arduino. Questo ci permette di creare codice meglio organizzato e più facilmente espandibile in futuro. La nostra scelta per il linguaggio è ricaduta su \emph{Python}, in quanto semplice, conciso ed efficace;
 \item \emph{Memoria a disposizione}: grazie alla memoria disponibile, sensibilmente superiore a quella di Arduino, ci è permesso di integrare più suoni. Inoltre, in futuro, sarà sempre possibile migliorare la qualità degli stessi.
-\item \emph{Facilità di connessione}: Raspberry Pi0 risulta più facile da connettere al mondo in quanto basta collegare un adattatore wifi o bluetooth all'USB. Arduino invece richiede appositi shield, costosi e non utilizzabili su altre schede, almeno non senza opportune modifiche
-\item \emph{Prezzo}: Raspberry Pi0 costa 5\$, molto meno di un Arduino, e, nonostante questo, offre infinite possibilità in più in quanto propone un sistema completo di tutto.
+\item \emph{Facilità di connessione}: Raspberry Pi0 risulta più facile da connettere al mondo in quanto basta collegare un adattatore USB per wifi o bluetooth. Arduino invece richiede specifici shield,.
+\item \emph{Prezzo}: Raspberry Pi0 costa 5\$, molto meno di un Arduino, e offre infinite possibilità grazie ad un sistema operativo completo.
 \end{enumerate}
 
-Certo Raspberry Pi0 ha dalla sua un grande svantaggio: il consumo.
+Un notevole problema del Raspberry Pi0 e' il consumo.
 
-Arduino a vuoto consuma circa 50mA, mentre Raspberry Pi0 arriva a 65mA in idle, ma si alza parecchio se il carico di lavoro aumenta, questo perchè il processore di Raspberry Pi0 è molto più performante di quello di Arduino, inoltre, montando un sistema operativo completo, Raspberry Pi0 ha anche diverso overhead in campo di potenza computazionale e consumo, cosa non trascurabile.
+Arduino senza carico consuma circa 50mA, mentre Raspberry Pi0 arriva a 65mA in idle, si alza parecchio se il carico di lavoro aumenta, in quanto il processore di Raspberry Pi0 è molto più performante di quello di Arduino, inoltre, montando un sistema operativo completo, Raspberry Pi0 ha anche diverso overhead in campo di potenza computazionale e consumo, cosa non trascurabile.
 
-Chiaramente poi i dispositivi di comunicazione comportano un innalzamento dei consumi, ma questo su entrambe le schede.
+Chiaramente i dispositivi di comunicazione comportano un innalzamento dei consumi in entrambe le schede.
 
 In conclusione, i vantaggi nell'utilizzo di Raspberry Pi0 ci sono sembrati schiaccianti.
 
 \subsection{Comunicazione}
-Anche qui, due opzioni iniziali: Bluetooth o WiFi.
+Le due opzioni per la comunicazione sono: Bluetooth o WiFi.
 
 Abbiamo optato per una connessione Bluetooth per i seguenti motivi:
 \begin{enumerate}
-\item \emph{Consumo}: il Bluetooth risulta avere un consumo energetico inferiore rispetto al WiFi, portandoci ad avere una durata della batteria leggermente superiore (non abbiamo dati precisi)
-\item \emph{Semplicità d'uso}: il Bluetooth è pensato per connessioni punto a punto, ossia esattamente la funzione che serve a noi. Il Wifi, invece, non è pensato per quello scopo e quindi relegherebbe all'utilizzo nei soli spazi dotati di rete WiFi oppure alla configurazione di una rete ad-hoc che risulta comunque un'operazione non banale e spesso mal funzionante (soprattutto su Linux)
+\item \emph{Consumo}: il Bluetooth risulta avere un consumo energetico inferiore rispetto al WiFi, portandoci ad avere una durata della batteria leggermente superiore (non abbiamo dati precisi).
+\item \emph{Semplicità d'uso}: il Bluetooth è pensato per connessioni punto a punto, ossia esattamente la funzione che serve a noi. Il Wifi, invece, non è pensato per quello scopo e quindi relegherebbe all'utilizzo nei soli spazi dotati di rete WiFi oppure alla configurazione di una rete ad-hoc che risulta comunque un'operazione non banale e spesso mal funzionante (soprattutto su Linux).
 \end{enumerate}
 
 \section{Schemi circuitali}
 \subsection{Controllo motori}
-Per il controllo dei motori abbiamo deciso di utilizzare una versione leggermente modificata del ponte H. I nomi dei componenti sono presi da \cref{fig:ponteH}. \'E ovviamente necessario uno di questi circuiti per ogni motore installato.
+Per il controllo dei motori abbiamo deciso di utilizzare una versione leggermente modificata del ponte H. I nomi dei componenti sono presi da \cref{fig:ponteH}. \'E necessario uno di questi circuiti per ogni motore installato.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{SchemaH}
@@ -117,16 +119,16 @@ Per il controllo dei motori abbiamo deciso di utilizzare una versione leggerment
 Passiamo alla rapida spiegazione del funzionamento del circuito. Il circuito ha due input: IN1 e IN2. Il comportamento è il seguente:
 \begin{enumerate}
 \item Se solo uno dei due fra IN1 e IN2 è attivo, nel motore scorre corrente, il verso dipende da quale dei due è alto.
-\item Se sia IN1 che IN2 sono a 0, il motore resta completamente scollegato dal circuito, permettendogli di muoversi per inerzia
+\item Se sia IN1 che IN2 sono a 0, il motore resta completamente scollegato dal circuito, permettendogli di muoversi per inerzia.
 \item Se sia IN1 che IN2 sono a 1, il motore ha entrambi i terminali a massa. Questo chiude la bobina del motore creando un cortocircuito. Così facendo se si tenta di muovere il motore si originerà all'interno della bobina una corrente che genererà a sua volta un campo magnetico che si opporrà al movimento del motore. Questo ha come risultato un effetto frenante. 
 \end{enumerate}
 
 Passiamo alla disamina dei componenti e delle loro funzioni.
-Tutti i transistori sono BJT. Questa scelta è stata fatta perché i BJT permettono di fare passare correnti elevate e soprattutto hanno basse cadute di potenziale in saturazione, ossia circa 0.3V tra collettore ed emettitore. Mantenere cadute di potenziale basse è essenziale perché il tutto è alimentato a soli 5V.
+Tutti i transistori sono BJT, perché permettono di fare passare correnti elevate e soprattutto hanno basse cadute di potenziale in saturazione, ossia circa 0.3V tra collettore ed emettitore. Mantenere cadute di potenziale basse è essenziale perché il tutto è alimentato a soli 5V.
 
 I quattro transistor principali di potenza sono Q1, Q2, Q3 e Q4. La circuiteria è fatta in modo tale che né Q1 e Q3, né Q2 e Q4 conducano \emph{mai} insieme. Questo avvenimento infatti produrrebbe un cortocircuito che danneggerebbe l'hardware.
 
-Da misurazioni, si è visto che i motori consumano meno di 200mA l'uno, e si è dunque pensato di inserire per sicurezza un fusibile da 500mA, F1, sufficientemente permissivo da far funzionare il motore, ma abbastanza restrittivo per evitare di bruciare l'alimentatore in caso di corto, che comunque, salvo manomissioni, non dovrebbe avvenire.
+Da misurazioni, si è visto che il consumo di ogni motore è inferiore ai 200mA, si è dunque pensato di inserire per sicurezza un fusibile da 500mA, F1, sufficientemente permissivo da far funzionare il motore, ma abbastanza restrittivo per evitare di bruciare l'alimentatore in caso di corto.
 
 Abbiamo poi altri quattro transistor che servono ad assicurare l'assenza di corti e ad implementare la funzionalità di cortocircuitare la bobina con entrambi gli ingressi a 1.\\
 La funzione logica realizzata è quella mostrata in tabella \ref{tab:tabFunz}
@@ -153,5 +155,36 @@ on & on & on & on & off & off
 \end{table}
 
 Da notare che U\$2 e U\$4 hanno un partitore resistivo sulla base. Questo serve a ritardare la loro accensione, infatti gli input non sono realmente squadrati ma aumentano gradualmente con una certa pendenza, seppur elevata. Questo permette di ritardare l'attivazione dei transistor sopracitati. Infatti se sulla base servono 0.7V per permettere l'accensione, con il partitore è richiesto che IN2 sia già ad almeno 1.4V. Questo accorgimento serve quando attiviamo contemporaneamente IN1 e IN2, per dare il tempo a U\$3 e U\$1 di inibire l'accensione di Q3 e Q4 impedendo quindi cortocircuiti.
+
+\section{Software}
+
+\subsection{Lato Raspberry Pi}
+
+Tutto il codice sorgente lato Raspberry Pi è liberamente accessibile attraverso il seguente repository github: \url{https://github.com/vxrich/Python_R2Pi0.git}.
+
+Il codice è commentato, ma solo nei punti in cui abbiamo ritenuto necessario precisare qualcosa. Per le funzioni o le classi autoesplicative abbiamo evitato di aggiungere commenti, per non appesantire la lettura del codice.
+
+Si è deciso di dare al software un'impronta un po' più professionale rispetto al semplice script dimostrativo autocontenuto.\\
+Abbiamo quindi suddiviso il codice in diversi moduli e usato alcuni design patterns per rendere il software il più possibile espandibile in futuro. Ovviamente resta un progetto di piccole dimensioni, senza particolari complessità.
+
+Vediamo una rapida disamina dei moduli software:
+\begin{enumerate}
+\item \emph{Controllo del movimento}: questo è un macro modulo composto da diversi sottomoduli. Abbiamo deciso di realizzare il controllo dei motori attraverso un decorator pattern: abbiamo uno stack liberamente componibile di controllori che via via aggiungono funzionalità. La classe base \emph{MotionController} astrae il controllo vedendolo come una semplice combinazione di una velocità ed una rotazione. Aggiunge inoltre un \emph{watchdog} per essere certi che, in assenza di comandi per un certo periodo di tempo, il robot venga fermato. Abbiamo poi il layer \emph{DistanceAdapter} che aggiunge la funzionalità di blocco in caso di ostacoli e il layer \emph{MoodedAdapter} che aggiunge alcuni semplici comportamenti \cbegin{}emotivi\cend{} del robot.\\
+Ci sono poi i sottomoduli \emph{Follower} e \emph{Reacher} che si occupano rispettivamente di mantenere una certa distanza dall'ostacolo di fronte e di raggiungerlo (attivati mediante comando vocale dall'app Android).
+\item \emph{Server}: composto essenzialmente da due classi: \emph{Server} e \emph{Subserver}. Server rimane in ascolto sul bluetooth e per ogni nuova connessione avvia una nuova istanza di Subserver che si occuperà di soddisfare le richieste del client.\\
+Ricevono in ingresso un array associativo contenente coppie comando-callback, in modo da poter aggiungere e togliere comandi nel modo più semplice possibile.
+\item \emph{Suono}: Si occupa di gestire la riproduzione di suoni monofonici in formato RTTTL. Composto da due classi: \emph{RTTLConverter}, che converte i file RTTTL in un formato più usabile in runtime ed \emph{RTTLPlayer}, che prende in input i suoni convertiti e li esegue in sequenza (ha una coda di esecuzione).
+\item \emph{Sensore di prossimità}: questo modulo è stato il più critico, perchè, per leggere la distanza, è necessario misurare la durata di un impulso su un pin di I/O. Scritto in python, questo risultava troppo CPU intensive, in quanto dovevamo di fatto eseguire un polling sul piedino senza poter mettere in pausa il thread per non avere enormi perdite di precisione.\\
+La soluzione è stata di ricorrere alla libreria \emph{wiringPi}, che, nella sua declinazione per il linguaggio C, permette di utilizzare degli interrupt scatenati sui fronti di salita e/o discesa dei pin di I/O.\\
+Abbiamo quindi scritto questo particolare modulo in C, poi un wrapper per poterlo compilare come modulo Python. Un po' una faticaccia ma il risultato è ottimo!\\
+Il modulo C si chiama \emph{proxsensor}, mentre in Python lo abbiamo incapsulato nella classe \emph{SensorController} (del modulo UltrasonicSensor.py) che legge la distanza ad intervalli regolari, scatenando un evento con la nuova distanza a cui si possono collegare tutti i listener del caso (pattern Observer).
+\item \emph{Mood}: piccolo modulo che ha il compito di gestire qualche emozione del robot. Niente di che, andrebbe ampliato.
+\item \emph{Pinout}: questo modulo contiene \emph{tutte} le associazioni pin-funzione svolta necessarie per il progetto. Questo ci permette di rimappare tutti gli I/O velocemente attraverso un singolo file.
+\item \emph{Blue}: alcune funzioni di utilità per utilizzare la connessione bluetooth.
+\item \emph{Misc}: cartella contente note ed appunti su come preparare un Raspberry Pi per fare funzionare questa applicazione.
+\item \emph{r2pi0\_{}V2}: punto di ingresso del sistema. \'E lo script da lanciare (con permessi di amministratore) per fare funzionare il tutto.
+
+Quasi tutti i moduli sono connessi attraverso eventi e rispettivi callback per ridurre al minimo possibile l'interdipendenza tra gli stessi.
+\end{enumerate}
 
 \end{document}
