@@ -3,10 +3,10 @@
 \contentsline {section}{\numberline {1}Obiettivi del progetto}{3}{section.1}
 \contentsline {section}{\numberline {2}Componenti e scelte progettuali}{4}{section.2}
 \contentsline {subsection}{\numberline {2.1}Scheda di controllo}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Comunicazione}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Comunicazione}{6}{subsection.2.2}
 \contentsline {section}{\numberline {3}Schemi circuitali}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Controllo motori}{6}{subsection.3.1}
 \contentsline {section}{\numberline {4}Software}{8}{section.4}
 \contentsline {subsection}{\numberline {4.1}Lato Raspberry Pi}{8}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Lato Smartphone}{10}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Classi}{11}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1}Classi}{12}{subsubsection.4.2.1}
