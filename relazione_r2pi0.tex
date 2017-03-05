@@ -20,6 +20,7 @@
 \newcommand{\cbegin}{‘‘}
 \newcommand{\cend}{’’}
 \newcommand{\imgsz}{0.3\textwidth}
+\newcommand{\imgszland}{0.6\textwidth}
 
 \makeindex
 
@@ -186,5 +187,72 @@ Il modulo C si chiama \emph{proxsensor}, mentre in Python lo abbiamo incapsulato
 
 Quasi tutti i moduli sono connessi attraverso eventi e rispettivi callback per ridurre al minimo possibile l'interdipendenza tra gli stessi.
 \end{enumerate}
+
+\subsection{Lato Smartphone}
+
+La nostra riproduzione di R2-D2 necessita di un controller remoto per i movimenti e le interazioni base,
+per questo abbiamo deciso di utilizzare un'applicazione programmata ad hoc per smartphone.
+
+L'applicazione e' scritta in \emph{Java} per sistema operativo \emph{Android}.
+Per la connessione utilizza una comunicazione bluetooth, che per ragioni di componentistica disponibile sara' la versione 2.0.
+
+\medskip
+
+Partendo dalla parte visiva, l'applicazione e' costituita da elementi grafici per l'interazione con il robot, che permettono:
+\begin{itemize}
+\item il controllo del movimento tramite un joystick virtuale
+\item l'attivazione della connessione bluetooth con la macchina
+\item l'invio di una richiesta per la riproduzione di suoni
+\item l'attivazione dei comandi vocali
+\item lo spegnimento completo del robot
+\end{itemize}
+
+\begin{figure}[h]
+\includegraphics[width=\imgszland]{screenapp}
+\centering
+\caption{Screen dell'applicazione}
+\label{fig:screen}
+\end{figure}
+
+\newpage
+\subsubsection{Classi}
+
+Le classi che compongono l'applicazione e che permettono tutte le interazioni sono:
+\begin{itemize}
+\item MainActivity 
+\item BluetoothComunication
+\item JoyStickView
+\item JoyStickTranslator
+\item JoyStickTrigonometricTranslator
+\item VocalTranslator
+\end{itemize}
+
+
+La classe \emph{MainActivity} rappresenta l'activity principale dell'applicazione, l'unica schermata con la quale interagiremo. 
+Il suo compito è quello di instanziare i pulsanti e il joystick, che permettono il movimento e l'utilizzo delle funzioni del robot.
+In questa classe creaiamo un oggetto \emph{BluetoothConnection} che ci permettera' l'invio dei vari comandi legati ad ogni pulsante.
+
+La gestione dei comandi vocali avviene direttamente nella MainActivity, fatto che ci permette di non dover creare una nuova activity per la gestione di questa funzione. Viene quindi creata una funzione startSpeechToText che avvia un Intent che inzia a catturare l'audio dal microfono per poi convertirlo tramite i servizi google in testo e salvarlo in una variabile dal metodo onActivityResult, da tale messaggio verra' poi estratto il comando tramite l'oggetto translatore della classe \emph{VocalTranslator} e inviato tramite Bluetooth al robot.
+
+\medskip
+
+La classe \emph{BluetoothComunication} utilizza le classi android per la gestione dei moduli e connessioni bluetooth, in particolare
+vengono utilizzate le classi BluetoothAdapter, per creare un oggetto adattatore che ci consentirà di connetterci al robot, BluetoothDevice, che ci servirà per elencare tutti i dispositivi ai quali il nostro smartphone è associato, e BluetoothSocket, che sarà necessario per instaurare la connesione.\\
+Affinchè ci possa essere la connesione è necessario effettuare l'associazione tra la parte di programma Python residente su Raspberry e la parte Java su Android manualmente, da riga di comando, successivamente il Raspberry verrà visualizzato nell'elenco dei dispositivi associati allo smartphone e basterà selezionarlo nella finestra che compare premendo il pulsante per la connessione Bluetooth.
+La classe inoltre prevede la gestione degli errori dovuti all'utilizzo su dispositivi senza Bluetooth e le eventuali perdite della connessione Bluetooth tra smartphone e Raspberry. Sono poi implementate tutte le funzioni per inviare i comandi al robot.
+
+\medskip
+
+La classe \emph{VocalTranslator} ha il compito di ricercare, nelle frasi ritornate dal servizio di riconoscimento vocale, le parole chiave che ci permettono di inviare i comandi al robot.
+I comandi implementati sono:
+\begin{itemize}
+\item seguimi
+\item rotazione destra e sinistra
+\item interruzione della musica
+\end{itemize}
+
+Possono essere interpretati sia in lingua italiana che inglese e in diverse forme.
+
+Nel caso dell'inserimento di un comando non riconosciuto il robot emetterà un segnale acustico di errore.
 
 \end{document}
