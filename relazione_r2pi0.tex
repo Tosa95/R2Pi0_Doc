@@ -176,6 +176,12 @@ Abbiamo quindi suddiviso il codice in diversi moduli e usato alcuni design patte
 Vediamo una rapida disamina dei moduli software:
 \begin{enumerate}
 \item \emph{Controllo del movimento}: questo è un macro modulo composto da diversi sottomoduli. Abbiamo deciso di realizzare il controllo dei motori attraverso un decorator pattern: abbiamo uno stack liberamente componibile di controllori che via via aggiungono funzionalità. La classe base \emph{MotionController} astrae il controllo vedendolo come una semplice combinazione di una velocità ed una rotazione. Aggiunge inoltre un \emph{watchdog} per essere certi che, in assenza di comandi per un certo periodo di tempo, il robot venga fermato. Abbiamo poi il layer \emph{DistanceAdapter} che aggiunge la funzionalità di blocco in caso di ostacoli e il layer \emph{MoodedAdapter} che aggiunge alcuni semplici comportamenti \cbegin{}emotivi\cend{} del robot.\\
+\begin{figure}[h]
+\includegraphics[width=\imgszland]{motion_stack}
+\centering
+\caption{Stack controllo movimento usato nella versione attuale}
+\label{fig:motion_stack}
+\end{figure}
 Ci sono poi i sottomoduli \emph{Follower} e \emph{Reacher} che si occupano rispettivamente di mantenere una certa distanza dall'ostacolo di fronte e di raggiungerlo (attivati mediante comando vocale dall'app Android).
 \item \emph{Server}: composto essenzialmente da due classi: \emph{Server} e \emph{Subserver}. Server rimane in ascolto sul bluetooth e per ogni nuova connessione avvia una nuova istanza di Subserver che si occuperà di soddisfare le richieste del client.\\
 Ricevono in ingresso un array associativo contenente coppie comando-callback, in modo da poter aggiungere e togliere comandi nel modo più semplice possibile.
