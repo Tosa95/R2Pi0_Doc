@@ -187,6 +187,22 @@ on & on & on & on & off & off
 
 Da notare che U\$2 e U\$4 hanno un partitore resistivo sulla base. Questo serve a ritardare la loro accensione, infatti gli input non sono realmente squadrati ma aumentano gradualmente con una certa pendenza, seppur elevata. Questo permette di ritardare l'attivazione dei transistor sopracitati. Infatti se sulla base servono 0.7V per permettere l'accensione, con il partitore è richiesto che IN2 sia già ad almeno 1.4V. Questo accorgimento serve quando attiviamo contemporaneamente IN1 e IN2, per dare il tempo a U\$3 e U\$1 di inibire l'accensione di Q3 e Q4 impedendo quindi cortocircuiti.
 
+\subsection{Buzzer}
+
+Abbiamo usato un buzzer piezoelettrico recuperato da un vecchio telefono.
+
+Dal datasheet del buzzer emerge la seguente figura:
+\begin{figure}[h]
+\includegraphics[width=\imgszland]{buzzerDS}
+\centering
+\caption{Caratteristica tensione-corrente del buzzer}
+\label{fig:buzzerDS}
+\end{figure}
+
+Considerando che lavoriamo attorno ai 3V, dal grafico possiamo notare come, a tale tensione, la corrente assorbita sia di circa 2mA.\\
+Possiamo quindi lasciare che il buzzer sia pilotato direttamente dal \raspi{} in quanto, come detto ad inizio sezione, ogni piedino può erogare fino a 10mA, quindi siamo ampiamente entro la soglia.
+
+
 \section{Software}
 
 \subsection{Lato \raspi}
