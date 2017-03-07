@@ -65,12 +65,20 @@ L'interfaccia JoyStickTranslator permette di stabilire i metodi che verranno uti
 
 La classe JoyStickTrigonometricTranslator implementa i metodi dell'interfaccia JoyStickTranslator in modo che vengano resituiti dei valori corretti e normalizzati per il successivo invio via Bluetooth al robot.
 
-3- INTERAZIONI
+----
 
-I comandi da impartire al robot sono forniti dagli elementi della view, per quanto riguarda il movimento i dati sono opportunamente tradotti in valori utilizzabili dal programma in Python residente su Raspberry.
-Ad ogni cambio valore viene inviato un nuovo comando in modo da poter controllare con precisione e fluidita' i movimenti del robot, in questo modo si puo' mantenere il controllo del robot, che nel caso di assenza di comandi per 100ms entrerebbe in una modalita' automatica.
+STRUTTURA
 
-
+Nella costruzione dello chassis, per avere una piu' fedele riproduzione dell'originale R2-D2, abbiamo optato per materiali semplici, leggeri e di facile reperibilita', come cartoncino, cartone e cartone plastico.
+Per rendere la struttura piu' solida abbiamo poi costruito un'ossatura interna con tubi in PVC del diametro di 20mm, che unisce le gambe e le spalle, costituendo un'unione fra i motori.
+Per le texture abbiamo utilizzato un modello Pepakura (reperibile al link: http://www.papercraftsquare.com/star-wars-full-size-r2-d2-free-papercraft-download.html) in scala 1:1 che abbiamo scalato a 1:1,33 per problemi di stampa delle singole parti.
+Le varie componenti sono poi state stampate e incollate con colla vinilica su differenti materiali, in base al compito che avrebbero svolto. 
+Le parti riguardanti le gambe sono state incollate su cartone ondulato monostrato in quanto non avrebbero composto una struttura portante, ma solo una copertura all'ossatura plastica interna.
+La semisfera che costituisce la testa e' anch'essa costituita da cartone ondulato monostrato.
+La parte del tronco e' stata costruita con cartone plastico che ci ha permesso di ottenere un unico pezzo conferendo maggiore stabilita' al robot.
+Il supporto interno ai componenti e' costruito in cartone ondulato doppio strato, piu' resistente e meno flessibile.
+Le componenti sono poi incollate fra di loro tramite colla a caldo.
+I motori sono agganciati ad un supporto che a sua volta e' collegato alla struttura plastica. 
 
 
 
