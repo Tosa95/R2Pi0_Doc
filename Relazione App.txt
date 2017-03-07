@@ -59,6 +59,16 @@ Nel caso dell'inserimento di un comando non riconosciuto il robot emettera' un s
 
 ---
 
+La classe JoyStickView permette di disegnare l'elemento JoyStick sulla shermata della nostra applicazione e permettere di ottenere la resistuzione di valori al movimento del cursore.
+
+L'interfaccia JoyStickTranslator permette di stabilire i metodi che verranno utilizzati per la restituzione della velocita' e della rotazione.
+
+La classe JoyStickTrigonometricTranslator implementa i metodi dell'interfaccia JoyStickTranslator in modo che vengano resituiti dei valori corretti e normalizzati per il successivo invio via Bluetooth al robot.
+
+3- INTERAZIONI
+
+I comandi da impartire al robot sono forniti dagli elementi della view, per quanto riguarda il movimento i dati sono opportunamente tradotti in valori utilizzabili dal programma in Python residente su Raspberry.
+Ad ogni cambio valore viene inviato un nuovo comando in modo da poter controllare con precisione e fluidita' i movimenti del robot, in questo modo si puo' mantenere il controllo del robot, che nel caso di assenza di comandi per 100ms entrerebbe in una modalita' automatica.
 
 
 
