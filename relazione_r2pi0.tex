@@ -6,6 +6,7 @@
 \usepackage{cleveref}
 \usepackage{wrapfig}
 \usepackage{hyperref}
+\usepackage{multicol}
 
 \graphicspath{ {images/} }
 
@@ -25,11 +26,12 @@
 \makeindex
 
 \begin{document} 
+
+
 \maketitle
 \newpage
 \tableofcontents
 \newpage
-
 \section{Obiettivi del progetto}
 
 L'intera documentazione in formato \LaTeX è disponibile nella repo \url{https://github.com/Tosa95/R2Pi0_Doc.git}.
@@ -269,5 +271,11 @@ I comandi implementati sono:
 Possono essere interpretati sia in lingua italiana che inglese e in diverse forme.
 
 Nel caso dell'inserimento di un comando non riconosciuto il robot emetterà un segnale acustico di errore.
+
+La classe \emph{JoyStickView} permette di disegnare l'elemento JoyStick sulla shermata della nostra applicazione e permettere di ottenere la resistuzione di valori al movimento del cursore.
+
+L'interfaccia \emph{JoyStickTranslator} permette di stabilire i metodi che verranno utilizzati per la restituzione della velocita' e della rotazione.
+
+La classe \emph{JoyStickTrigonometricTranslator} implementa i metodi dell'interfaccia JoyStickTranslator in modo che vengano resituiti dei valori corretti e normalizzati per il successivo invio via Bluetooth al robot.
 
 \end{document}
