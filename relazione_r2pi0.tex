@@ -24,7 +24,7 @@
 \newcommand{\imgsz}{0.3\textwidth}
 \newcommand{\imgszland}{0.6\textwidth}
 \newcommand{\raspi}{Raspberry Pi} 
-\newcommand{\raszero} {\raspi Zero}
+\newcommand{\raszero} {\raspi{} Zero}
 
 \makeindex
 
@@ -318,6 +318,31 @@ L'interfaccia \emph{JoyStickTranslator} permette di stabilire i metodi che verra
 
 La classe \emph{JoyStickTrigonometricTranslator} implementa i metodi dell'interfaccia JoyStickTranslator in modo che vengano resituiti dei valori corretti e normalizzati per il successivo invio via Bluetooth al robot.
 
+\section{Struttura}
+
+
+Nella costruzione dello chassis, per avere una piu' fedele riproduzione dell'originale R2-D2, abbiamo optato per materiali semplici, leggeri e di facile reperibilità, come \emph{cartoncino}, \emph{cartone} e \emph{cartone plastico}.
+
+
+Per rendere la struttura più solida abbiamo poi costruito un'\emph{ossatura} interna con \emph{tubi in PVC} del diametro di 20mm, che unisce le gambe e le spalle, costituendo un'unione fra i motori.
+Per le texture abbiamo utilizzato un modello \emph{Pepakura} (reperibile al link: \url{http://www.papercraftsquare.com/star-wars-full-size-r2-d2-free-papercraft-download.html}) in scala 1:1 che abbiamo scalato a 1:1,33 per problemi di stampa delle singole parti.
+
+Le varie texture sono poi state stampate e incollate con colla vinilica sui differenti materiali.
+
+\bigskip
+
+La struttura esterna delle \emph{gambe} è composta di cartone ondulato monostrato, in quanto costituisce solo una copertura all'ossatura plastica interna e pertanto non richiedeva particolare rigidità strutturale.\\
+La semisfera che costituisce la \emph{testa} è costituita da cartone ondulato monostrato, per gli stessi motivi.\\
+La parte del \emph{tronco} è stata costruita con cartone plastico, il quale ci ha permesso di ottenere un unico pezzo rigido, tale da conferire una buona stabilità al robot.\\
+Il \emph{supporto interno ai componenti} e' costruito in cartone ondulato doppio strato, più resistente e meno flessibile.
+
+Le componenti sono poi incollate fra di loro tramite colla a caldo.
+I motori sono agganciati ad un supporto che a sua volta e' collegato alla struttura plastica. 
+
+\bigskip
+
+DA INSERIRE FOTO!
+
 \section{Sviluppi futuri}
 
 Abbiamo pensato ad alcuni interessanti sviluppi futuri:
@@ -327,5 +352,7 @@ Abbiamo pensato ad alcuni interessanti sviluppi futuri:
 \item \emph{Puntamento automatico}: dotare il robot di una pistola ad acqua con cui possa \cbegin fare il dispettoso\cend{} sparando getti d'acqua contro le persone. Ovviamente sempre attraverso Open CV, ma questa volta puntando alle facce.
 
 \end{itemize}
+
+
 
 \end{document}
