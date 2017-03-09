@@ -18,10 +18,13 @@
   Riccardo Grespan
 }
 
+
 \newcommand{\cbegin}{‘‘}
 \newcommand{\cend}{’’}
 \newcommand{\imgsz}{0.3\textwidth}
 \newcommand{\imgszland}{0.6\textwidth}
+\newcommand{\raspi}{Raspberry Pi} 
+\newcommand{\raszero} {\raspi Zero}
 
 \makeindex
 
@@ -65,12 +68,12 @@ Questa prima versione non avrà la possibilità di ruotare la testa e cambiare i
 \subsection{Scheda di controllo}
 Iniziamo dal cuore del progetto: \emph{la scheda di controllo}.
 
-Le opzioni erano sostanzialmente due: Raspberry Pi0 o Arduino Uno.
+Le opzioni erano sostanzialmente due: \raszero{} o Arduino Uno.
 
 \begin{figure}[h]
 \includegraphics[width=\imgsz]{rpi0}
 \centering
-\caption{Raspberry Pi0}
+\caption{\raszero}
 \label{fig:rpi0}
 \end{figure}
 
@@ -88,21 +91,23 @@ Per la maggior parte dei compiti le due schede erano sostanzialmente intercambia
 \item \emph{Potenza di calcolo}: entrambi i dispositivi in esame hanno la potenza di calcolo necessaria per svolgere ognuno dei compiti necessari agli scopi del progetto.
 \end{enumerate} 
 
-Le seguenti motivazioni ci hanno fatto propendere per Raspberry Pi0:
+Le seguenti motivazioni ci hanno fatto propendere per \raszero :
 \begin{enumerate}
 \item \emph{Semplicità di sviluppo}: grazie al fatto di avere a disposizione un sistema operativo completo, possiamo utilizzare linguaggi di più alto livello rispetto al C fornito da Arduino. Questo ci permette di creare codice meglio organizzato e più facilmente espandibile in futuro. La nostra scelta per il linguaggio è ricaduta su \emph{Python}, in quanto semplice, conciso ed efficace;
 \item \emph{Memoria a disposizione}: grazie alla memoria disponibile, sensibilmente superiore a quella di Arduino, ci è permesso di integrare più suoni. Inoltre, in futuro, sarà sempre possibile migliorare la qualità degli stessi.
-\item \emph{Facilità di connessione}: Raspberry Pi0 risulta più facile da connettere al mondo in quanto basta collegare un adattatore USB per wifi o bluetooth. Arduino invece richiede specifici shield,.
-\item \emph{Prezzo}: Raspberry Pi0 costa 5\$, molto meno di un Arduino, e offre infinite possibilità grazie ad un sistema operativo completo.
+\item \emph{Facilità di connessione}: \raszero{} risulta più facile da connettere al mondo in quanto basta collegare un adattatore USB per WiFi o Bluetooth. Arduino invece richiede specifici shield,.
+\item \emph{Prezzo}: \raszero{} costa 5\$, molto meno di un Arduino, e offre infinite possibilità grazie ad un sistema operativo completo.
 \end{enumerate}
 
-Un notevole problema del Raspberry Pi0 e' il consumo.
+Un notevole problema del \raszero{} e' il consumo.
 
-Arduino senza carico consuma circa 50mA, mentre Raspberry Pi0 arriva a 65mA in idle, si alza parecchio se il carico di lavoro aumenta, in quanto il processore di Raspberry Pi0 è molto più performante di quello di Arduino, inoltre, montando un sistema operativo completo, Raspberry Pi0 ha anche diverso overhead in campo di potenza computazionale e consumo, cosa non trascurabile.
+Arduino senza carico consuma circa 50mA, mentre \raszero{} arriva a 65mA in idle, si alza parecchio se il carico di lavoro aumenta, in quanto il processore di \raszero{} è molto più performante di quello di Arduino, inoltre, montando un sistema operativo completo, \raszero{} ha anche diverso overhead in campo di potenza computazionale e consumo, cosa non trascurabile.
 
 Chiaramente i dispositivi di comunicazione comportano un innalzamento dei consumi in entrambe le schede.
 
-In conclusione, i vantaggi nell'utilizzo di Raspberry Pi0 ci sono sembrati schiaccianti.
+Per ridurre al minimo i consumi abbiamo installato Raspbian in versione lite, ossia senza interfaccia grafica, e disattivato il controllore video HDMI, guadagnando così qualche prezioso mA.
+
+In conclusione, i vantaggi nell'utilizzo di \raszero{} ci sono sembrati schiaccianti.
 
 \subsection{Comunicazione}
 Le due opzioni per la comunicazione sono: Bluetooth o WiFi.
@@ -113,7 +118,25 @@ Abbiamo optato per una connessione Bluetooth per i seguenti motivi:
 \item \emph{Semplicità d'uso}: il Bluetooth è pensato per connessioni punto a punto, ossia esattamente la funzione che serve a noi. Il Wifi, invece, non è pensato per quello scopo e quindi relegherebbe all'utilizzo nei soli spazi dotati di rete WiFi oppure alla configurazione di una rete ad-hoc che risulta comunque un'operazione non banale e spesso mal funzionante (soprattutto su Linux).
 \end{enumerate}
 
+\bigskip
+\bigskip
+
+NOTA: sebbene fosse sicuramente preferibile utilizzare un adattatore BLE, meno energivoro, per ragioni di componentistica disponibile abbiamo dovuto optare per un vecchio adattatore Bluetooth 2.0.\\
+Inoltre, data la recente uscita del \raszero{} W, con lo stesso hardware di Pi Zero, ma dotato anche di BLE e WiFi, al costo (teorico) di 10\$, avremmo potuto usare tale dispositivo, ma per mancanza di disponibilità e costi di spedizione superiori al suo valore, abbiamo deciso di rimanere sul Pi Zero di prima generazione. 
+
 \section{Schemi circuitali}
+
+Benchè \raspi{} sia spesso usato come microcontrollore, in realtà non è propriamente tale, si avvicina molto più ad un PC standard che ad una MCU.
+
+Non è quindi in grado di erogare grandi correnti sui suoi pin di I/O. Non esiste un vero e proprio datasheet che dia dei valori precisi, ma nella community di sviluppatori \raspi{} si danno per accettate le seguenti soglie:
+\begin{itemize}
+\item circa 10-15mA per piedino
+\item circa 50mA di assorbimento complessivo derivante dalla somma dei contibuti di tutti i piedini
+\item i piedini a 5V sono collegati direttamente all'alimentazione, quindi da essi si può assorbire tutta la corrente erogabile dall'alimentatore meno quella assorbita dal \raspi{} stesso
+\end{itemize}
+
+Da questi valori si può capire come le uscite del \raspi{} siano state ideate per essere bufferate, e così noi abbiamo fatto.
+
 \subsection{Controllo motori}
 Per il controllo dei motori abbiamo deciso di utilizzare una versione leggermente modificata del ponte H. I nomi dei componenti sono presi da \cref{fig:ponteH}. \'E necessario uno di questi circuiti per ogni motore installato.
 
@@ -164,11 +187,27 @@ on & on & on & on & off & off
 
 Da notare che U\$2 e U\$4 hanno un partitore resistivo sulla base. Questo serve a ritardare la loro accensione, infatti gli input non sono realmente squadrati ma aumentano gradualmente con una certa pendenza, seppur elevata. Questo permette di ritardare l'attivazione dei transistor sopracitati. Infatti se sulla base servono 0.7V per permettere l'accensione, con il partitore è richiesto che IN2 sia già ad almeno 1.4V. Questo accorgimento serve quando attiviamo contemporaneamente IN1 e IN2, per dare il tempo a U\$3 e U\$1 di inibire l'accensione di Q3 e Q4 impedendo quindi cortocircuiti.
 
+\subsection{Buzzer}
+
+Abbiamo usato un buzzer piezoelettrico recuperato da un vecchio telefono.
+
+Dal datasheet del buzzer emerge la seguente figura:
+\begin{figure}[h]
+\includegraphics[width=\imgszland]{buzzerDS}
+\centering
+\caption{Caratteristica tensione-corrente del buzzer}
+\label{fig:buzzerDS}
+\end{figure}
+
+Considerando che lavoriamo attorno ai 3V, dal grafico possiamo notare come, a tale tensione, la corrente assorbita sia di circa 2mA.\\
+Possiamo quindi lasciare che il buzzer sia pilotato direttamente dal \raspi{} in quanto, come detto ad inizio sezione, ogni piedino può erogare fino a 10mA, quindi siamo ampiamente entro la soglia.
+
+
 \section{Software}
 
-\subsection{Lato Raspberry Pi}
+\subsection{Lato \raspi}
 
-Tutto il codice sorgente lato Raspberry Pi è liberamente accessibile attraverso il seguente repository github: \url{https://github.com/vxrich/Python_R2Pi0.git}.
+Tutto il codice sorgente lato \raspi{} è liberamente accessibile attraverso il seguente repository github: \url{https://github.com/vxrich/Python_R2Pi0.git}.
 
 Il codice è commentato, ma solo nei punti in cui abbiamo ritenuto necessario precisare qualcosa. Per le funzioni o le classi autoesplicative abbiamo evitato di aggiungere commenti, in modo da non appesantire la lettura del codice.
 
@@ -195,7 +234,7 @@ Il modulo C si chiama \emph{proxsensor}, mentre in Python lo abbiamo incapsulato
 \item \emph{Mood}: piccolo modulo che ha il compito di gestire qualche emozione del robot. Niente di che, andrebbe ampliato.
 \item \emph{Pinout}: questo modulo contiene \emph{tutte} le associazioni pin-funzione svolta necessarie per il progetto. Questo ci permette di rimappare tutti gli I/O velocemente attraverso un singolo file.
 \item \emph{Blue}: alcune funzioni di utilità per utilizzare la connessione bluetooth.
-\item \emph{Misc}: cartella contente note ed appunti su come preparare un Raspberry Pi per fare funzionare questa applicazione.
+\item \emph{Misc}: cartella contente note ed appunti su come preparare un \raspi{} per fare funzionare questa applicazione.
 \item \emph{r2pi0\_{}V2}: punto di ingresso del sistema. \'E lo script da lanciare (con permessi di amministratore) per fare funzionare il tutto.
 
 Quasi tutti i moduli sono connessi attraverso eventi e rispettivi callback per ridurre al minimo possibile l'interdipendenza tra gli stessi.
@@ -211,7 +250,6 @@ La nostra riproduzione di R2-D2 necessita di un controller remoto per i moviment
 per questo abbiamo deciso di utilizzare un'applicazione programmata ad hoc per smartphone.
 
 L'applicazione e' scritta in \emph{Java} per sistema operativo \emph{Android}.
-Per la connessione utilizza una comunicazione bluetooth, che per ragioni di componentistica disponibile sara' la versione 2.0.
 
 \medskip
 
@@ -255,10 +293,10 @@ La gestione dei comandi vocali avviene direttamente nella MainActivity, fatto ch
 
 La classe \emph{BluetoothComunication} utilizza le classi android per la gestione dei moduli e connessioni bluetooth, in particolare
 vengono utilizzate le classi BluetoothAdapter, per creare un oggetto adattatore che ci consentirà di connetterci al robot, BluetoothDevice, che ci servirà per elencare tutti i dispositivi ai quali il nostro smartphone è associato, e BluetoothSocket, che sarà necessario per instaurare la connesione.\\
-Affinchè ci possa essere la connesione è necessario effettuare l'associazione tra la parte di programma Python residente su Raspberry e la parte Java su Android manualmente, da riga di comando, successivamente il Raspberry verrà visualizzato nell'elenco dei dispositivi associati allo smartphone e basterà selezionarlo nella finestra che compare premendo il pulsante per la connessione Bluetooth.
-La classe inoltre prevede la gestione degli errori dovuti all'utilizzo su dispositivi senza Bluetooth e le eventuali perdite della connessione Bluetooth tra smartphone e Raspberry. Sono poi implementate tutte le funzioni per inviare i comandi al robot.
+Affinchè ci possa essere la connesione è necessario effettuare l'associazione tra la parte di programma Python residente su \raspi{} e la parte Java su Android manualmente, da riga di comando, successivamente il \raspi{} verrà visualizzato nell'elenco dei dispositivi associati allo smartphone e basterà selezionarlo nella finestra che compare premendo il pulsante per la connessione Bluetooth.
+La classe inoltre prevede la gestione degli errori dovuti all'utilizzo su dispositivi senza Bluetooth e le eventuali perdite della connessione Bluetooth tra smartphone e \raspi{}. Sono poi implementate tutte le funzioni per inviare i comandi al robot.
 
-\medskip
+\bigskip
 
 La classe \emph{VocalTranslator} ha il compito di ricercare, nelle frasi ritornate dal servizio di riconoscimento vocale, le parole chiave che ci permettono di inviare i comandi al robot.
 I comandi implementati sono:
@@ -272,10 +310,22 @@ Possono essere interpretati sia in lingua italiana che inglese e in diverse form
 
 Nel caso dell'inserimento di un comando non riconosciuto il robot emetterà un segnale acustico di errore.
 
+\bigskip
+
 La classe \emph{JoyStickView} permette di disegnare l'elemento JoyStick sulla shermata della nostra applicazione e permettere di ottenere la resistuzione di valori al movimento del cursore.
 
 L'interfaccia \emph{JoyStickTranslator} permette di stabilire i metodi che verranno utilizzati per la restituzione della velocita' e della rotazione.
 
 La classe \emph{JoyStickTrigonometricTranslator} implementa i metodi dell'interfaccia JoyStickTranslator in modo che vengano resituiti dei valori corretti e normalizzati per il successivo invio via Bluetooth al robot.
+
+\section{Sviluppi futuri}
+
+Abbiamo pensato ad alcuni interessanti sviluppi futuri:
+
+\begin{itemize}
+\item \emph{Aggancio bersaglio ed inseguimento}: l'idea è di dotare il robot di videocamera e, attraverso Open CV o librerie simili, permettergli di agganciare e seguire un oggetto, in particolare pensavamo ad un simbolo da incollare sui nostri vestiti per farci seguire. Ovviamente questo presuppone di passare ad un modello di \raspi{} più performante, come ad esempio il \raspi{} 3, in quanto la computer vision richiede una potenza di calcolo elevata.
+\item \emph{Puntamento automatico}: dotare il robot di una pistola ad acqua con cui possa \cbegin fare il dispettoso\cend{} sparando getti d'acqua contro le persone. Ovviamente sempre attraverso Open CV, ma questa volta puntando alle facce.
+
+\end{itemize}
 
 \end{document}
