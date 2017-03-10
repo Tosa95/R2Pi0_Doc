@@ -5,9 +5,10 @@
 \BOOKMARK [1][-]{section.3}{Schemi circuitali}{}% 5
 \BOOKMARK [2][-]{subsection.3.1}{Controllo motori}{section.3}% 6
 \BOOKMARK [2][-]{subsection.3.2}{Buzzer}{section.3}% 7
-\BOOKMARK [1][-]{section.4}{Software}{}% 8
-\BOOKMARK [2][-]{subsection.4.1}{Lato Raspberry Pi}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.2}{Lato Smartphone}{section.4}% 10
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Classi}{subsection.4.2}% 11
-\BOOKMARK [1][-]{section.5}{Struttura}{}% 12
-\BOOKMARK [1][-]{section.6}{Sviluppi futuri}{}% 13
+\BOOKMARK [2][-]{subsection.3.3}{Sensore di prossimit\340}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Software}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Lato Raspberry Pi}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Lato Smartphone}{section.4}% 11
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Classi}{subsection.4.2}% 12
+\BOOKMARK [1][-]{section.5}{Struttura}{}% 13
+\BOOKMARK [1][-]{section.6}{Sviluppi futuri}{}% 14

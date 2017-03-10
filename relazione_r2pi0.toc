@@ -7,9 +7,10 @@
 \contentsline {section}{\numberline {3}Schemi circuitali}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Controllo motori}{7}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Buzzer}{9}{subsection.3.2}
-\contentsline {section}{\numberline {4}Software}{10}{section.4}
-\contentsline {subsection}{\numberline {4.1}Lato Raspberry Pi}{10}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Lato Smartphone}{12}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Classi}{14}{subsubsection.4.2.1}
-\contentsline {section}{\numberline {5}Struttura}{15}{section.5}
-\contentsline {section}{\numberline {6}Sviluppi futuri}{16}{section.6}
+\contentsline {subsection}{\numberline {3.3}Sensore di prossimit\IeC {\`a}}{9}{subsection.3.3}
+\contentsline {section}{\numberline {4}Software}{12}{section.4}
+\contentsline {subsection}{\numberline {4.1}Lato Raspberry Pi}{12}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Lato Smartphone}{15}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Classi}{16}{subsubsection.4.2.1}
+\contentsline {section}{\numberline {5}Struttura}{18}{section.5}
+\contentsline {section}{\numberline {6}Sviluppi futuri}{18}{section.6}

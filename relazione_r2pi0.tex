@@ -204,6 +204,67 @@ Dal datasheet del buzzer emerge la seguente figura:
 Considerando che lavoriamo attorno ai 3V, dal grafico possiamo notare come, a tale tensione, la corrente assorbita sia di circa 2mA.\\
 Possiamo quindi lasciare che il buzzer sia pilotato direttamente dal \raspi{} in quanto, come detto ad inizio sezione, ogni piedino può erogare fino a 10mA, quindi siamo ampiamente entro la soglia.
 
+\subsection{Sensore di prossimità}
+
+\begin{figure}[h]
+\includegraphics[width=\imgszland]{us_img}
+\centering
+\caption{Sensore di prossimità}
+\label{fig:buzzerDS}
+\end{figure}
+
+Il rilevatore di distanza del robot è un sensore ad ultrasuoni HC-SR04.
+\'E costituito da un emettitore e da un ricevitore di ultrasuoni, gestiti da un circuito di controllo.\\
+Emette ultrasuoni ad una frequenza di 40KHz. Può misurare distanze dai 2cm fino ai 4m, con un angolo di 15 gradi e una precisione fino a 3mm, perfetto per le misurazioni che dobbiamo effettuare.\\
+Per la connessione e l'utilizzo è dotato di 4 pin:
+\begin{itemize}
+\item VCC: alimentazione a 5V;
+\item GND: massa;
+\item Trig: input per scatenare l'inizio della rilevazione;
+\item Echo: output per l'invio della distanza alla board, codificato come impulso di durata variabile.
+\end{itemize}
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{us_data}
+\centering
+\caption{Caratteristiche di interfacciamento del sensore di prossimità}
+\label{fig:usdata}
+\end{figure}
+
+
+
+Come possiamo notare in \autoref{fig:usdata}, il sensore usa i livelli tipici della logica TTL.
+
+Infatti, funziona ad un voltaggio di 5V. Questo non è un problema in quanto su \raspi{} abbiamo una linea di alimentazione a 5V liberamente usabile.
+
+I problemi sorgono nell'interfacciamento dati tra \raspi{} e sensore.\\
+Per quanto riguarda il piedino Trig, di input per il sensore, non ci sono problemi in quanto la Vih dei TTL si attesta intorno ai 2V, quindi con i 3.3V (circa) di output di \raspi{} riusciamo a pilotarlo senza problemi.\\
+Il piedino Echo mostra invece qualche problema in più, in quanto i piedini di input del \raspi{} non sono 5V-tolerant. Se collegato direttamente potrebbe quindi danneggiare la board. Per evitare questo problema abbiamo utilizzato un semplice partitore resistivo con $R2 = 2R1$, in modo da moltiplicare la tensione per un fattore $2/3$: $5V*(2/3)=3.3V$, come desiderato.
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{us_diagram}
+\centering
+\caption{Diagramma temporale del sensore di prossimità}
+\label{fig:usdiagram}
+\end{figure}
+
+Per effettuare la misurazione è necessario inviare un segnale dal Raspberry Pi al pin trigger del sensore della durata minima di 10us, il segnale verrà poi emesso come ultrasuono che rimbalzando contro una superficie verrà riflesso e captato dal ricevitore. 
+Il sensore risponderà poi al \raspi{} sul pin Echo con un impulso di durata proporzionale alla distanza dell'ostacolo dal sensore.
+
+Per il calcolo si usa la seguente formula:\\
+\begin{center}
+$ distanza = durataEcho * SOUND\_CONST $
+\end{center}
+dove:
+\begin{itemize}
+\item $SOUND\_CONST$ è un valore costante di conversione (171.5)
+\item $durataEcho$ è la durata dell'impulso misurato sul piedino Echo, in seocndi
+\item $distanza$ è la distanza, in metri dall'ostacolo
+\end{itemize}
+
+
+
+
 
 \section{Software}
 
