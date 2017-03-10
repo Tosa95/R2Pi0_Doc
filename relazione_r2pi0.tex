@@ -242,6 +242,13 @@ Per quanto riguarda il piedino Trig, di input per il sensore, non ci sono proble
 Il piedino Echo mostra invece qualche problema in più, in quanto i piedini di input del \raspi{} non sono 5V-tolerant. Se collegato direttamente potrebbe quindi danneggiare la board. Per evitare questo problema abbiamo utilizzato un semplice partitore resistivo con $R2 = 2R1$, in modo da moltiplicare la tensione per un fattore $2/3$: $5V*(2/3)=3.3V$, come desiderato.
 
 \begin{figure}[h]
+\includegraphics[width=\imgszland]{partitore}
+\centering
+\caption{Partitore resistivo applicato al pin Echo}
+\label{fig:partitore}
+\end{figure}
+
+\begin{figure}[h]
 \includegraphics[width=\linewidth]{us_diagram}
 \centering
 \caption{Diagramma temporale del sensore di prossimità}

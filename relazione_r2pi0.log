@@ -1,12 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.18)  10 MAR 2017 09:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.2.11)  10 MAR 2017 20:01
 entering extended mode
-**./relazione_r2pi0.tex
-(relazione_r2pi0.tex
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**relazione_r2pi0.tex
+(./relazione_r2pi0.tex
 LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -21,19 +23,13 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/04/23 3.9r The Babel package
 
-*************************************
-* Local config file bblopts.cfg used
-*
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\babel-italian\italian.ldf
+(/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2015/03/26 v1.3n Italian support from the babel system
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/04/23 3.9r Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
@@ -42,22 +38,22 @@ File: babel.def 2016/04/23 3.9r Babel common definitions
 \it@doublequoteactive=\count89
 \it@ISOcompliance=\count90
 ))
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\etoolbox\etoolbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count91
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\utf8x.def
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
 ))
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\ucs.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucs.sty
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\uni-global.def
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
 \uc@secondtry=\count92
@@ -65,31 +61,31 @@ File: uni-global.def 2013/05/13 UCS: Unicode global data
 \uc@combtoksb=\toks17
 \uc@temptokena=\toks18
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count93
@@ -97,10 +93,10 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\cleveref\cleveref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2013/12/28 v0.19 Intelligent cross-referencing
 )
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\wrapfig\wrapfig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen106
 \WF@size=\dimen107
 \c@WF@wrappedlines=\count94
@@ -108,14 +104,14 @@ Package: cleveref 2013/12/28 v0.19 Intelligent cross-referencing
 \WF@everypar=\toks20
 Package: wrapfig 2003/01/31  v 3.6
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -154,25 +150,25 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen108
 \Hy@linkcounter=\count95
 \Hy@pagecounter=\count96
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count97
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4486.
@@ -184,7 +180,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4735.
 \c@Hy@tempcnt=\count98
 
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -209,19 +205,19 @@ LaTeX Info: Redefining \pageref on input line 6416.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
 \Fld@listcount=\count103
 \c@bookmark@seq@number=\count104
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip43
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \c@tracingmulticols=\count105
 \mult@box=\box27
@@ -275,7 +271,7 @@ Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 
 
 Writing index file relazione_r2pi0.idx
-(relazione_r2pi0.aux
+(./relazione_r2pi0.aux
 
 LaTeX Warning: Label `fig:buzzerDS' multiply defined.
 
@@ -307,10 +303,10 @@ italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
 italian.ldf    on input line 31.
 
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\ucsencs.def
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count114
 \scratchdimen=\dimen121
@@ -323,10 +319,10 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 \MPnumerator=\count118
 \makeMPintoPDFobject=\count119
 \everyMPtoPDFconversion=\toks22
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -335,14 +331,18 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 \AtBeginShipoutBox=\box54
 Package hyperref Info: Link coloring OFF on input line 31.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count120
@@ -351,7 +351,7 @@ LaTeX Info: Redefining \ref on input line 31.
 LaTeX Info: Redefining \pageref on input line 31.
 LaTeX Info: Redefining \nameref on input line 31.
 
-(relazione_r2pi0.out) (relazione_r2pi0.out)
+(./relazione_r2pi0.out) (./relazione_r2pi0.out)
 \@outlinefile=\write4
 \openout4 = `relazione_r2pi0.out'.
 
@@ -361,8 +361,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 35.
  [1
 
-{C:/Users/Davide/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (relazione
-_r2pi0.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./relazione_r2pi0.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -374,22 +373,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout5 = `relazione_r2pi0.toc'.
 
  [2]
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\uni-0.def
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<images/R2D2.png, id=88, 322.20375pt x 456.70625pt>
+<images/R2D2.png, id=89, 322.20375pt x 456.70625pt>
 File: images/R2D2.png Graphic file (type png)
  <use images/R2D2.png>
 Package pdftex.def Info: images/R2D2.png used on input line 49.
 (pdftex.def)             Requested size: 117.00119pt x 165.84271pt.
 
-[3 <./images/R2D2.png>] <images/rpi0.jpg, id=106, 256.70906pt x 176.91093pt>
+[3 <./images/R2D2.png>] <images/rpi0.jpg, id=107, 256.70906pt x 176.91093pt>
 File: images/rpi0.jpg Graphic file (type jpg)
 
 <use images/rpi0.jpg>
 Package pdftex.def Info: images/rpi0.jpg used on input line 76.
 (pdftex.def)             Requested size: 117.00119pt x 80.63226pt.
- <images/Uno.jpg, id=107, 501.875pt x 377.41pt>
+ <images/Uno.jpg, id=108, 501.875pt x 377.41pt>
 File: images/Uno.jpg Graphic file (type jpg)
 
 <use images/Uno.jpg>
@@ -403,7 +402,7 @@ z-za-re un adat-ta-to-re BLE,
 
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 135.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
@@ -412,21 +411,21 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 LaTeX Warning: Reference `fig:ponteH' on page 1 undefined on input line 143.
 
-<images/SchemaH.png, id=134, 1160.08406pt x 640.64343pt>
+<images/SchemaH.png, id=135, 1160.08406pt x 640.64343pt>
 File: images/SchemaH.png Graphic file (type png)
 
 <use images/SchemaH.png>
 Package pdftex.def Info: images/SchemaH.png used on input line 146.
 (pdftex.def)             Requested size: 390.0pt x 215.37202pt.
  [7 <./images/SchemaH.png>] [8]
-<images/buzzerDS.png, id=151, 220.32312pt x 171.13937pt>
+<images/buzzerDS.png, id=153, 220.32312pt x 171.13937pt>
 File: images/buzzerDS.png Graphic file (type png)
 
 <use images/buzzerDS.png>
 Package pdftex.def Info: images/buzzerDS.png used on input line 198.
 (pdftex.def)             Requested size: 234.00238pt x 181.77243pt.
 
-<images/us_img.png, id=152, 388.45125pt x 276.53313pt>
+<images/us_img.png, id=154, 388.45125pt x 276.53313pt>
 File: images/us_img.png Graphic file (type png)
  <use images/us_img.png>
 Package pdftex.def Info: images/us_img.png used on input line 210.
@@ -436,7 +435,7 @@ Package pdftex.def Info: images/us_img.png used on input line 210.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9 <./images/buzzerDS.png>]
-<images/us_data.png, id=158, 455.20062pt x 168.63pt>
+<images/us_data.png, id=160, 455.20062pt x 168.63pt>
 File: images/us_data.png Graphic file (type png)
  <use images/us_data.png>
 Package pdftex.def Info: images/us_data.png used on input line 228.
@@ -446,47 +445,59 @@ Package pdftex.def Info: images/us_data.png used on input line 228.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10 <./images/us_img.png>]
-<images/us_diagram.png, id=166, 418.06187pt x 171.64125pt>
+<images/partitore.png, id=168, 1050.92625pt x 674.52pt>
+File: images/partitore.png Graphic file (type png)
+
+<use images/partitore.png>
+Package pdftex.def Info: images/partitore.png used on input line 245.
+(pdftex.def)             Requested size: 234.00238pt x 150.18571pt.
+
+<images/us_diagram.png, id=169, 418.06187pt x 171.64125pt>
 File: images/us_diagram.png Graphic file (type png)
 
 <use images/us_diagram.png>
-Package pdftex.def Info: images/us_diagram.png used on input line 245.
+Package pdftex.def Info: images/us_diagram.png used on input line 252.
 (pdftex.def)             Requested size: 390.0pt x 160.13016pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
-
- []
-
-[11 <./images/us_data.png> <./images/us_diagram.png>]
-(C:\Users\Davide\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-<images/motion_stack.png, id=174, 597.23125pt x 845.1575pt>
-File: images/motion_stack.png Graphic file (type png)
-
-<use images/motion_stack.png>
-Package pdftex.def Info: images/motion_stack.png used on input line 286.
-(pdftex.def)             Requested size: 234.00238pt x 331.14473pt.
- [12] [13 <./images/motion_stack.png>] [14]
-<images/screenapp.png, id=200, 1927.2pt x 1084.05pt>
-File: images/screenapp.png Graphic file (type png)
-
-<use images/screenapp.png>
-Package pdftex.def Info: images/screenapp.png used on input line 333.
-(pdftex.def)             Requested size: 234.00238pt x 131.61871pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15] [16 <./images/screenapp.png>] [17] [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 427.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 427.
- (relazione_r2pi0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 427.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 427.
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+
+ []
+
+[11 <./images/us_data.png> <./images/partitore.png>] [12 <./images/us_diagram.p
+ng>] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+<images/motion_stack.png, id=184, 597.23125pt x 845.1575pt>
+File: images/motion_stack.png Graphic file (type png)
+
+<use images/motion_stack.png>
+Package pdftex.def Info: images/motion_stack.png used on input line 293.
+(pdftex.def)             Requested size: 234.00238pt x 331.14473pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13] [14 <./images/motion_stack.png>] [15]
+<images/screenapp.png, id=210, 1927.2pt x 1084.05pt>
+File: images/screenapp.png Graphic file (type png)
+
+<use images/screenapp.png>
+Package pdftex.def Info: images/screenapp.png used on input line 340.
+(pdftex.def)             Requested size: 234.00238pt x 131.61871pt.
+ [16 <./images/screenapp.png>] [17] [18] [19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 434.
+
+[20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 434.
+ (./relazione_r2pi0.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 434.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 434.
 Package rerunfilecheck Info: File `relazione_r2pi0.out' has not changed.
-(rerunfilecheck)             Checksum: 10F3F1D76E4D0C735FAFC33A55E43965;849.
+(rerunfilecheck)             Checksum: 1BC97ED329C1B8F7E602188C599A0E43;835.
 
 
 LaTeX Warning: There were undefined references.
@@ -496,25 +507,26 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8690 strings out of 493333
- 135746 string characters out of 3139190
- 250975 words of memory out of 3000000
- 12058 multiletter control sequences out of 15000+200000
- 9676 words of font info for 34 fonts, out of 3000000 for 9000
+ 8696 strings out of 493013
+ 135698 string characters out of 6135682
+ 251223 words of memory out of 5000000
+ 12075 multiletter control sequences out of 15000+600000
+ 9676 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,7n,37p,912b,541s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12
-.pfb>
-Output written on relazione_r2pi0.pdf (19 pages, 2410405 bytes).
+ 29i,7n,37p,910b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmtt12.pfb>
+Output written on relazione_r2pi0.pdf (20 pages, 2393985 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 236 compressed objects within 3 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 168 words of extra memory for PDF output out of 10000 (max. 10000000)
 
